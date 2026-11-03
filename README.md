@@ -14,6 +14,7 @@ Meu setup do **Claude Code** (Windows e Linux): uma barra de status com uso de c
 | `keybindings/` | `Shift+Enter` pula linha e `Ctrl+Z` desfaz no prompt. |
 | `windows-terminal/` | Trechos para o Windows Terminal: faz o `Shift+Enter` chegar ao Claude Code e deixa o `Ctrl+V` colar imagem. |
 | `plugins/voidpeek/` | Plugin: uma faixa acima do prompt para cada imagem colada, com tamanho e botão **Abrir**. |
+| `plugins/git-changes/` | Plugin: painel de Source Control e Run and Debug no estilo VS Code (veja abaixo). |
 
 ## Requisitos
 
@@ -75,6 +76,16 @@ Comportamento:
 - No **`/clear`**, ele apaga as imagens da sessão que está saindo. Em `/exit` elas ficam.
 - As dimensões (`1207×738`) só aparecem em PNG. Em outros formatos aparece só o tamanho do arquivo.
 
+### 4. Plugin `git-changes`
+
+```
+/plugin install git-changes --marketplace isp3ct/claude-cozy-setup
+```
+
+Painel no estilo VS Code com branch, ahead/behind, *Staged Changes* e *Changes* de cada pasta do `.code-workspace` (ou do repo atual). Clique num arquivo para ver o diff. Cada arquivo tem stage, unstage, discard e *Reveal in File Explorer*. Há também uma faixa *Run and Debug* com launch configs, tasks e scripts do `package.json`. Atualiza a cada 4 s e faz fetch a cada 3 min. Abre com 144 colunas ou mais, ou com `/git-changes`.
+
+![git-changes](docs/git-changes.png)
+
 ## Personalizar
 
 Tudo está no `statusline/statusline.js`:
@@ -95,7 +106,7 @@ Tudo está no `statusline/statusline.js`:
 
 - Barra de status: apague a chave `statusLine` do `~/.claude/settings.json`.
 - Atalhos: apague as linhas `shift+enter` e `ctrl+z` do `~/.claude/keybindings.json`.
-- Plugin: `/plugin uninstall voidpeek`.
+- Plugins: `/plugin uninstall voidpeek` e `/plugin uninstall git-changes`.
 - Windows Terminal: remova a ação e a tecla `shift+enter` que você colou.
 
 Os arquivos `.bak` que o instalador criou guardam como estava antes.

@@ -6,6 +6,11 @@
       "name": "voidpeek",
       "source": "./plugins/voidpeek",
       "description": "Faixa acima do prompt com as imagens coladas e botão para abrir em tamanho real."
+    },
+    {
+      "name": "git-changes",
+      "source": "./plugins/git-changes",
+      "description": "Painel de Source Control e Run and Debug no estilo VS Code, para cada pasta do .code-workspace."
     }
   ]
 }
