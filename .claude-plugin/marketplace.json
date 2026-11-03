@@ -1,6 +1,8 @@
 {
   "name": "claude-cozy-setup",
-  "owner": { "name": "isp3ct" },
+  "owner": {
+    "name": "isp3ct"
+  },
   "plugins": [
     {
       "name": "voidpeek",
@@ -11,6 +13,11 @@
       "name": "git-changes",
       "source": "./plugins/git-changes",
       "description": "Painel de Source Control e Run and Debug no estilo VS Code, para cada pasta do .code-workspace."
+    },
+    {
+      "name": "workspace-git",
+      "source": "./plugins/workspace-git",
+      "description": "Avisa o Claude quais repos git existem no .code-workspace (ou nas subpastas), com branch e mudanças pendentes."
     }
   ]
 }

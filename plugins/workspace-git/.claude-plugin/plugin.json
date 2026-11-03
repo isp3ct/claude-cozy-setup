@@ -1,0 +1,1 @@
+{ "name": "workspace-git", "author": { "name": "isp3ct" }, "version": "0.1.0", "description": "Tells Claude which git repos live in a .code-workspace (or in the subfolders of the current directory), with branch and uncommitted changes" }
