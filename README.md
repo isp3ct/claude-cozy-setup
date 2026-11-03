@@ -84,8 +84,6 @@ Comportamento:
 
 Painel no estilo VS Code com branch, ahead/behind, *Staged Changes* e *Changes* de cada pasta do `.code-workspace` (ou do repo atual). Clique num arquivo para ver o diff. Cada arquivo tem stage, unstage, discard e *Reveal in File Explorer*. Há também uma faixa *Run and Debug* com launch configs, tasks e scripts do `package.json`. Atualiza a cada 4 s e faz fetch a cada 3 min. Abre com 144 colunas ou mais, ou com `/git-changes`.
 
-![git-changes](docs/git-changes.png)
-
 ## Personalizar
 
 Tudo está no `statusline/statusline.js`:
