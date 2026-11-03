@@ -1,0 +1,6 @@
+{
+  "name": "voidpeek",
+  "version": "0.1.0",
+  "description": "Cozy purple thumbnails of pasted images above the prompt.",
+  "types": "./types/index.d.ts"
+}

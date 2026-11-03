@@ -1,0 +1,11 @@
+{
+  "name": "claude-cozy-setup",
+  "owner": { "name": "isp3ct" },
+  "plugins": [
+    {
+      "name": "voidpeek",
+      "source": "./plugins/voidpeek",
+      "description": "Faixa acima do prompt com as imagens coladas e botão para abrir em tamanho real."
+    }
+  ]
+}

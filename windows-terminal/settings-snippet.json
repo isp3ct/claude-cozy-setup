@@ -1,0 +1,14 @@
+{
+  "_comment": "Mescle estes trechos no settings.json do Windows Terminal (Configurações > Abrir arquivo JSON).",
+
+  "actions": [
+    {
+      "command": { "action": "sendInput", "input": "\n" },
+      "id": "User.ShiftEnterNewline"
+    }
+  ],
+
+  "keybindings": [
+    { "id": "User.ShiftEnterNewline", "keys": "shift+enter" }
+  ]
+}
