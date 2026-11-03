@@ -64,6 +64,8 @@ Ou, do terminal:
 claude plugin install voidpeek --marketplace isp3ct/claude-cozy-setup
 ```
 
+> **Instale com escopo `user` para valer em todos os projetos.** O escopo `local` (ou `project`) deixa o plugin ativo **só na pasta onde você instalou**: abrindo o `claude` em outra pasta, ele não carrega e parece que "não funciona". Pelo terminal o padrão já é `user`; pelo `/plugin install`, escolha `user` quando ele perguntar. Para conferir onde cada plugin está instalado, olhe `~/.claude/plugins/installed_plugins.json` (campo `scope`). Para trocar, rode `claude plugin install <plugin>@claude-cozy-setup -s user`.
+
 ## Como usar o `voidpeek`
 
 1. Copie uma imagem (um print, por exemplo) e cole no prompt com `Ctrl+V` (ou `Alt+V`, o atalho padrão do Claude Code).
