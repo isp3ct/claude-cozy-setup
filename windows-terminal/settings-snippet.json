@@ -9,6 +9,8 @@
   ],
 
   "keybindings": [
-    { "id": "User.ShiftEnterNewline", "keys": "shift+enter" }
+    { "id": "User.ShiftEnterNewline", "keys": "shift+enter" },
+    { "id": null, "keys": "ctrl+v" },
+    { "id": "Terminal.PasteFromClipboard", "keys": "ctrl+shift+v" }
   ]
 }

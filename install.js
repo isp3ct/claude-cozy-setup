@@ -49,14 +49,14 @@ for (const block of mine.bindings) {
   else keys.bindings.push(block);
 }
 fs.writeFileSync(keysFile, JSON.stringify(keys, null, 2));
-console.log('✔ atalhos instalados (Shift+Enter e Ctrl+Z)');
+console.log('✔ atalhos instalados (Shift+Enter, Ctrl+Z e Ctrl+V para imagem)');
 
 // 3) o que sobra é manual
 console.log(`
 Faltam passos manuais:
 
 1) Só no Windows Terminal: mescle windows-terminal/settings-snippet.json no
-   settings.json do terminal (Shift+Enter para pular linha).
+   settings.json do terminal (Shift+Enter para pular linha; Ctrl+V cola imagem, Ctrl+Shift+V cola texto).
 
 2) Plugin do preview de imagens, dentro do Claude Code:
    /plugin install voidpeek --marketplace isp3ct/claude-cozy-setup

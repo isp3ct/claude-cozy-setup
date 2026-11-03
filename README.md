@@ -12,7 +12,7 @@ Meu setup do **Claude Code** (Windows e Linux): uma barra de status com uso de c
 | --- | --- |
 | `statusline/` | Barra de status: contexto (`ctx`), janela de 5 horas (`5h`) e de 7 dias (`7d`), com gradiente violeta → índigo → azul e o tempo até renovar (`↻`). |
 | `keybindings/` | `Shift+Enter` pula linha e `Ctrl+Z` desfaz no prompt. |
-| `windows-terminal/` | Trechos para o Windows Terminal: faz o `Shift+Enter` chegar ao Claude Code. |
+| `windows-terminal/` | Trechos para o Windows Terminal: faz o `Shift+Enter` chegar ao Claude Code e deixa o `Ctrl+V` colar imagem. |
 | `plugins/voidpeek/` | Plugin: uma faixa acima do prompt para cada imagem colada, com tamanho e botão **Abrir**. |
 
 ## Requisitos
@@ -44,6 +44,7 @@ Abra um `claude` novo e a barra aparece em **todos os projetos**.
 **Windows Terminal:** abra **Configurações → Abrir arquivo JSON** e junte o conteúdo de [`windows-terminal/settings-snippet.json`](windows-terminal/settings-snippet.json) nas listas `actions` e `keybindings` que já existem.
 
 - **`Shift+Enter`** envia o mesmo sinal do `Ctrl+J`, que o Claude Code entende como "nova linha". Sem isso o Windows Terminal manda `Enter` puro.
+- **`Ctrl+V`** passa a ser entregue ao Claude Code, que cola a imagem (`chat:imagePaste`, já incluído no `keybindings.json`). O Windows Terminal, sozinho, não entrega imagem. Para colar **texto** no terminal, use `Ctrl+Shift+V`.
 
 Se você usa outro terminal (Cursor, VS Code), o `/terminal-setup` do Claude Code pode resolver o `Shift+Enter`.
 
@@ -86,7 +87,7 @@ Tudo está no `statusline/statusline.js`:
 
 - No **Windows** a barra, os atalhos, o snippet do Windows Terminal e o plugin foram usados de verdade, no Windows Terminal com o cmd. O `install.js` eu só rodei no Linux (WSL), com um `HOME` de teste.
 - No **Linux** (Ubuntu 24.04 no WSL) eu só confirmei que o plugin carrega e que o `/peek 1` acha a imagem e manda abrir. **Não testei** a faixa visual acima do prompt, o clique no botão, o `xdg-open` abrindo uma janela de verdade nem o apagar no `/clear`.
-- Em outros terminais o `Shift+Enter` pode precisar de outro ajuste.
+- Em outros terminais o `Shift+Enter` e o `Ctrl+V` podem precisar de outro ajuste.
 - O clique no botão **Abrir** depende de o terminal repassar o mouse. Se não funcionar, use `/peek`.
 - O tamanho da letra é do terminal e não dá para mudar pela barra de status.
 

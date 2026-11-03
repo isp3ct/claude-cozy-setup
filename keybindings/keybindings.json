@@ -6,7 +6,8 @@
       "context": "Chat",
       "bindings": {
         "shift+enter": "chat:newline",
-        "ctrl+z": "chat:undo"
+        "ctrl+z": "chat:undo",
+        "ctrl+v": "chat:imagePaste"
       }
     }
   ]
