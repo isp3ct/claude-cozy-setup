@@ -15,6 +15,7 @@ Meu setup do **Claude Code** (Windows e Linux): uma barra de status com uso de c
 | `windows-terminal/` | Trechos para o Windows Terminal: faz o `Shift+Enter` chegar ao Claude Code e deixa o `Ctrl+V` colar imagem. |
 | `plugins/voidpeek/` | Plugin: uma faixa acima do prompt para cada imagem colada, com tamanho e botão **Abrir**. |
 | `plugins/git-changes/` | Plugin: painel de Source Control e Run and Debug no estilo VS Code (veja abaixo). |
+| `plugins/workspace-git/` | Plugin: o Claude já começa a sessão sabendo quais repos git existem no `.code-workspace` e o que mudou em cada um. |
 
 ## Requisitos
 
@@ -83,6 +84,16 @@ Comportamento:
 ```
 
 Painel no estilo VS Code com branch, ahead/behind, *Staged Changes* e *Changes* de cada pasta do `.code-workspace` (ou do repo atual). Clique num arquivo para ver o diff. Cada arquivo tem stage, unstage, discard e *Reveal in File Explorer*. Há também uma faixa *Run and Debug* com launch configs, tasks e scripts do `package.json`. Atualiza a cada 4 s e faz fetch a cada 3 min. Abre com 144 colunas ou mais, ou com `/git-changes`.
+
+### 5. Plugin `workspace-git`
+
+```
+/plugin install workspace-git --marketplace isp3ct/claude-cozy-setup
+```
+
+Quando você abre o `claude` numa pasta que **não** é um repositório git, mas tem um `.code-workspace` (ou subpastas que são repos), o plugin lê as pastas do workspace e roda `git branch` e `git status` em cada uma. O resultado entra no contexto do Claude, então ele já sabe quais repos existem e o que mudou, sem `--add-dir` e sem você explicar. Sem workspace, ele procura repos nas subpastas diretas. Em pasta que já é um repo, ele não faz nada.
+
+É um retrato do início da sessão: não cria painel (para isso use o `git-changes`) e não se atualiza sozinho. Mostra no máximo 20 repos e 15 linhas de mudança por repo.
 
 ## Personalizar
 
